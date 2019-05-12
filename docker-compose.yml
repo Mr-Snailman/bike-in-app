@@ -1,0 +1,18 @@
+version: '3'
+services:
+  bike-in-app-ui:
+    depends_on:
+      - bike-in-app
+    image: 'com.snailman/bike-in-app-ui:latest'
+    container_name: 'bike-in-app-ui'
+    build:
+      context: ./js
+    ports:
+      - "3000:80"
+  bike-in-app:
+    image: 'com.snailman/bike-in-app:latest'
+    container_name: 'bike-in-app-rest'
+    build:
+      context: ./java
+    ports:
+      - "8080:8080"

@@ -7,5 +7,4 @@ TODO
 ==
 
 * Swap to redux-thunk or find FSA style thunk library
-* Dockerify and compose the build
 * Setup it up in Netlify
