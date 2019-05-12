@@ -1,5 +1,6 @@
 import * as statusDuck from './ducks/statusDuck'
 import AppBar from '@material-ui/core/AppBar'
+import Button from '@material-ui/core/Button'
 import { connect } from 'react-redux'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
@@ -24,6 +25,9 @@ const styles = (theme) => {
     content: {
       marginTop: appBarHeight,
       flexGrow: 1,
+    },
+    switchButton: {
+      padding: theme.spacing.unit,
     }
   }
 }
@@ -39,9 +43,18 @@ class App extends React.Component {
     return (
       <div className={classes.root}>
         <AppBar className={classes.appBar}>
-          <Typography variant='h2' color='inherit' align='center'>
-            Did I Bike In Today?
-          </Typography>
+          <Grid container justify='center'>
+            <Grid item>
+              <Typography variant='h2' color='inherit' align='center'>
+                Did I Bike In Today?
+              </Typography>
+            </Grid>
+            <Grid item className={classes.switchButton}>
+              <Button color='inherit' variant='outlined' onClick={() => { this.props.updateStatus() }}>
+                Switch Status
+              </Button>
+            </Grid>
+          </Grid>
         </AppBar>
         <Grid
           container
@@ -50,7 +63,7 @@ class App extends React.Component {
           direction='row'
           className={classes.content}>
           <Grid item>
-            <Typography align='center'>
+            <Typography variant='h3' color='inherit' align='center'>
               { this.props.status ? 'Yes' : 'No' }
             </Typography>
           </Grid>
