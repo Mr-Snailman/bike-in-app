@@ -1,28 +1,27 @@
 {
-  "name": "js",
+  "name": "bike-in-app",
   "version": "1.0.0",
-  "description": "Describe js here",
   "private": true,
   "scripts": {
     "build": "nwb build-react-app",
     "clean": "nwb clean-app",
-    "start": "nwb serve-react-app",
-    "test": "nwb test-react",
-    "test:coverage": "nwb test-react --coverage",
-    "test:watch": "nwb test-react --server"
+    "start": "nwb serve-react-app"
   },
   "dependencies": {
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.2",
     "axios": "^0.18.0",
-    "material-ui": "^0.20.2",
+    "flux-standard-action": "^2.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "redux-actions": "^2.6.5",
+    "redux-logger": "^3.0.6",
+    "redux-promise-middleware": "^6.1.0"
   },
   "devDependencies": {
     "nwb": "0.23.x"
   },
-  "author": "",
-  "license": "MIT",
-  "repository": ""
+  "license": "MIT"
 }
